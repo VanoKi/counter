@@ -2,16 +2,31 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [] = useState()
+  let [a, setA] = useState(0)
+  const onclickIncHandler = () => {
+    if (a < 5) {
+      setA(++a)
+    }
+  }
+  const onclickResetHandeler = () => {
+    setA(0)
+  }
 
   return (
     <div className={'counter'}>
       <div className={'counter-display'}>
-        <span>0</span>
+        <span className={a === 5 ? 'red' : ''}>{a}</span>
       </div>
       <div className={'button-panel'}>
-        <button className={'counter-button'}>inc</button>
-        <button className={'counter-button'}>reset</button>
+        <button className={'counter-button'}
+                onClick={onclickIncHandler}
+                disabled={a === 5}>
+          inc
+        </button>
+        <button className={'counter-button'}
+                onClick={onclickResetHandeler}>
+          reset
+        </button>
       </div>
     </div>
   )
