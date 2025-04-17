@@ -1,0 +1,43 @@
+.counter {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 300px;
+    height: 250px;
+}
+
+.counter-display {
+    background: blue;
+    height: 60%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.counter-display span {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.button-panel {
+    height: 30%;
+    border-radius: 10px;
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.counter-button {
+    border: 10px;
+    background: blue;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    width: 45%;
+    font-size: 32px;
+}
