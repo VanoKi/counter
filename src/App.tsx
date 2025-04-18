@@ -24,7 +24,9 @@ function App() {
           inc
         </button>
         <button className={'counter-button'}
-                onClick={onclickResetHandeler}>
+                onClick={onclickResetHandeler}
+                disabled={a === 0}
+        >
           reset
         </button>
       </div>
