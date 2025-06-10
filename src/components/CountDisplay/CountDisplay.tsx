@@ -1,11 +1,11 @@
 type Props = {
-    a: number
+    count: number
 }
 
-export const CountDisplay = ({a}: Props) => {
+export const CountDisplay = ({count}: Props) => {
     return (
         <div className={'counter-display'}>
-            <span className={a >= 5 ? 'red' : 'black'}>{a}</span>
+            <span className={count >= 5 ? 'red' : 'black'}>{count}</span>
         </div>
     )
 }

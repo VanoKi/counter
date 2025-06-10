@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import {useReducer} from 'react'
 import './App.css'
 import {CountDisplay} from "./components/CountDisplay/CountDisplay.tsx";
 import {ButtonPanel} from "./components/ButtonPanel/ButtonPanel.tsx";
-import {useReducer} from "react";
 
 function App() {
   // const [a, setA] = useState(0)
@@ -11,6 +10,7 @@ function App() {
     switch (action.type) {
       case 'increment' : return {count: state.count + 1}
       case 'decrement' : return {count: state.count - 1}
+      case 'reset' : return {count: 0}
       default: return state
     }
   }
@@ -18,25 +18,24 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const onclickIncHandler = () => {
-      setA(a + 1)
+    dispatch({type: 'increment'})
   }
 
   const onclickResetHandler = () => {
-    setA(0)
+    dispatch({type: 'reset'})
   }
-  console.log(a);
 
 
   return (
     <>
       <div className={'counter'}>
         <CountDisplay
-            a={a}
+            count={state.count}
         />
         <ButtonPanel
             onclickIncHandler={onclickIncHandler}
             onclickResetHandler={onclickResetHandler}
-            a={a}/>
+            count={state.count}/>
       </div>
 
     </>
