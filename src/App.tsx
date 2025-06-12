@@ -20,12 +20,12 @@ function App() {
     <>
       <div className={'counter'}>
         <CountDisplay
-            a={counter}
+            counter={counter}
         />
         <ButtonPanel
             onclickIncHandler={onclickIncHandler}
             onclickResetHandler={onclickResetHandler}
-            a={counter}/>
+            counter={counter}/>
       </div>
 
     </>
