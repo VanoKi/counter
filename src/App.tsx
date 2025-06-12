@@ -4,28 +4,28 @@ import {CountDisplay} from "./components/CountDisplay/CountDisplay.tsx";
 import {ButtonPanel} from "./components/ButtonPanel/ButtonPanel.tsx";
 
 function App() {
-  const [a, setA] = useState(0)
+  const [counter, setCounter] = useState(0)
 
   const onclickIncHandler = () => {
-      setA(a + 1)
+      setCounter(counter + 1)
   }
 
   const onclickResetHandler = () => {
-    setA(0)
+    setCounter(0)
   }
-  console.log(a);
+  console.log(counter);
 
 
   return (
     <>
       <div className={'counter'}>
         <CountDisplay
-            a={a}
+            a={counter}
         />
         <ButtonPanel
             onclickIncHandler={onclickIncHandler}
             onclickResetHandler={onclickResetHandler}
-            a={a}/>
+            a={counter}/>
       </div>
 
     </>
