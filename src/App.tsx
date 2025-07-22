@@ -25,6 +25,10 @@ function App() {
     dispatch({type: 'reset'})
   }
 
+  const onclickDecHandler = () => {
+    dispatch({type: 'decrement'})
+  }
+
 
   return (
     <>
@@ -35,6 +39,7 @@ function App() {
         <ButtonPanel
             onclickIncHandler={onclickIncHandler}
             onclickResetHandler={onclickResetHandler}
+            onclickDecHandler={onclickDecHandler}
             count={state.count}/>
       </div>
 
