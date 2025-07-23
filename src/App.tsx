@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import {useReducer} from 'react'
 import './App.css'
 import {CountDisplay} from "./components/CountDisplay/CountDisplay.tsx";
 import {ButtonPanel} from "./components/ButtonPanel/ButtonPanel.tsx";
+import {counterReducer} from "./model/counter-reducer.ts";
 
 function App() {
-  const [counter, setCounter] = useState(0)
+  const [counter, dispatchCounter] = useReducer(counterReducer, 0)
 
   const onclickIncHandler = () => {
-      setCounter(counter + 1)
+    dispatchCounter({type: "inc"})
   }
 
-  const onclickResetHandler = () => {
-    setCounter(0)
+  const onclickDecHandler = () => {
+    dispatchCounter({type: "dec"})
   }
   console.log(counter);
 
+  const onclickResetHandler = () => {
+    dispatchCounter({type: "res"})
+  }
 
   return (
     <>
@@ -24,6 +28,7 @@ function App() {
         />
         <ButtonPanel
             onclickIncHandler={onclickIncHandler}
+            onclickDecHandler={onclickDecHandler}
             onclickResetHandler={onclickResetHandler}
             counter={counter}/>
       </div>
